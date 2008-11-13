@@ -3,7 +3,7 @@
 <script type="text/javascript"> 
  //<![CDATA[ 
 var api_key = '42696d7cced6055890424b9c9a2c4933'; 
-var channel_path = '/'; 
+var channel_path = '/xd_receiver.htm'; 
 FB_RequireFeatures(["Api"], function(){ 
     // Create an ApiClient object, passing app's API key and 
     // a site relative URL to xd_receiver.htm 
