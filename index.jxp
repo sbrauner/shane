@@ -1,7 +1,7 @@
 <!-- Text area to display tracing information to the Web page. If you use Firebug or Safari debug console, these tracings will go to the JavaScript console as well. --> <textarea style="width: 1000px; height: 300px;" id="_traceTextBox"> </textarea> 
 <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript">
 </script> 
-<script type="text/javascript"> 
+<%
  //<![CDATA[ 
 var api_key = '42696d7cced6055890424b9c9a2c4933'; 
 var channel_path = '/xd_receiver.htm'; 
@@ -16,9 +16,9 @@ FB_RequireFeatures(["Api"], function(){
 	// Get friends list
 	api.friends_get(null, function(result){ 
 	    Debug.dump(result, 'friendsResult from non-batch execution '); 
-	    api.users.getInfo({ api_key:api_key, call_id:getTime(), uids:result, fields: "last_name"}); 
+	    //   var r = api.users.getInfo({ api_key:api_key, call_id:getTime(), uids:result, fields: "last_name"}); 
 	  }); 
       }); 
   }); 
 //]]> 
-</script>
+*>
