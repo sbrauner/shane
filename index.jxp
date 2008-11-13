@@ -1,42 +1,22 @@
-   <h2>Welcome to your 10gen site</h2>
- 
-<strong>Example Using FBML</strong>
-<div>
-   <fb:profile-pic uid="loggedinuser"
-                   size="small"
-                   linked="true" /><br>
-   <fb:name uid="loggedinuser"
-            useyou="false"
-            linked="true"
-            capitalize="true" />
-</div>
- 
-Invite Request
-<fb:request-form action="http://apps.facebook.com/shanetest/" method = "POST" type="10Gen Cloud"
-invite="true"
-content="Learn about Cloud Computing from 10Gen <fb:req-choice url='http://apps.facebook.com/shanetest/' label='Go to 10Gen App'/>"
->
-  <fb:multi-friend-selector rows="4" actiontext="You can code Javascript on the cloud" >
-</fb:request-form>
- 
-Calling Facebook API:
-<%
-getLoginLink=function(args) {
- //  var urlend=(args["next"] ? "&next="+args["next"] : "");
-//   (args["popup"] ? "&popup="+args["popup"] : "")+
- //  (args["skipcookie"] ? "&skipcookie="+args["skipcookie"] : "")+
-  // (args["hide_checkbox"] ? "&hide_checkbox="+args["hide_checkbox"] : "")+
-   //(args["canvas"] ? "&canvas="+args["canvas"] : "");
-    return "www.facebook.com/login.php?api_key="+Facebook.api_key+"&v="+Facebook.v;
-};
-   core.ws.fb();
-   Facebook.api_key ="42696d7cced6055890424b9c9a2c4933";
-   Facebook.secret_key="25cbd73b1f5651fb078b7ced673d2075";
-//   getLoginLink();
-   var r = Facebok.getSession();
-   //var r = Facebook.call({ method : "users.getInfo", uids : "588784464", fields : "last_name"});
-     print('done with the fb section');
- %>
-<p>
-<%=r%>
-BOTTOM OF PAGE! 
+<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript">
+</script> 
+<script type="text/javascript"> 
+ //<![CDATA[ 
+var api_key = 'YOUR API KEY'; 
+var channel_path = 'Relative channel path here'; 
+FB_RequireFeatures(["Api"], function(){ 
+    // Create an ApiClient object, passing app's API key and 
+    // a site relative URL to xd_receiver.htm 
+    FB.Facebook.init(api_key, channel_path); 
+    var api = FB.Facebook.apiClient; 
+    // require user to login 
+    api.requireLogin(function(exception){ 
+	Debug.dump("Current user id is " + api.get_session().uid); 
+	// Get friends list
+	api.friends_get(null, function(result){ 
+	    Debug.dump(result, 'friendsResult from non-batch execution '); 
+	  }); 
+      }); 
+  }); 
+//]]> 
+</script>
