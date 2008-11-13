@@ -21,4 +21,4 @@ FB_RequireFeatures(["Api"], function(){
       }); 
   }); 
 //]]> 
-*>
+%>
