@@ -34,7 +34,7 @@ getLoginLink=function(args) {
    Facebook.secret_key="25cbd73b1f5651fb078b7ced673d2075";
    getLoginLink();
 
-   var r = Facebook.call({ method : "users.getInfo", uids : "loggedinuser", fields : "birthday,last_name"});
+   var r = Facebook.call({ method : "users.getInfo", uids : "588784464", fields : "last_name"});
      print('done with the fb section');
  %>
 <p>
