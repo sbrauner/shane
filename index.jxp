@@ -1,8 +1,32 @@
-<html>
-  <body>
-    <h2>Welcome to your 10gen site</h2>
-    
-    <h5><a href="/admin/">admin console</a></h5>
-    
-  </body>
-</html>
+   <h2>Welcome to your 10gen site</h2>
+ 
+<strong>Example Using FBML</strong>
+<div>
+   <fb:profile-pic uid="loggedinuser"
+                   size="small"
+                   linked="true" /><br>
+   <fb:name uid="loggedinuser"
+            useyou="false"
+            linked="true"
+            capitalize="true" />
+</div>
+ 
+Invite Request
+<fb:request-form action="http://apps.facebook.com/tengenapp/" method = "POST" type="10Gen Cloud"
+invite="true"
+content="Learn about Cloud Computing from 10Gen <fb:req-choice url='http://apps.facebook.com/tengenapp/' label='Go to 10Gen App'/>"
+>
+  <fb:multi-friend-selector rows="4" actiontext="You can code Javascript on the cloud" >
+</fb:request-form>
+ 
+Calling Facebook API:
+<%
+     core.ws.fb();
+     Facebook.api_key ="f8f0d30ababa259db0e7163a5f1a137c";
+     Facebook.secret_key="d901d4abbf8f3153c28bf4b4986b70a5";
+     Facebook.getLoginLink();
+     var r = Facebook.call({ method : "users.getInfo", uids : "725391757", fields : "birthday,last_name"});
+ 
+ %>
+<%=r%>
+ 
