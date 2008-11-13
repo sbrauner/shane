@@ -22,11 +22,11 @@ content="Learn about Cloud Computing from 10Gen <fb:req-choice url='http://apps.
 Calling Facebook API:
 <%
      core.ws.fb();
-     Facebook.api_key ="f8f0d30ababa259db0e7163a5f1a137c";
-     Facebook.secret_key="d901d4abbf8f3153c28bf4b4986b70a5";
-     Facebook.getLoginLink();
+     Facebook.api_key ="42696d7cced6055890424b9c9a2c4933";
+     Facebook.secret_key="25cbd73b1f5651fb078b7ced673d2075";
+     //Facebook.getLoginLink();
      var r = Facebook.call({ method : "users.getInfo", uids : "725391757", fields : "birthday,last_name"});
- 
+     print('done with the fb section');
  %>
 <%=r%>
- 
+BOTTOM OF PAGE! 
