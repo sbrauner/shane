@@ -16,7 +16,7 @@ FB_RequireFeatures(["Api"], function(){
 	// Get friends list
 	api.friends_get(null, function(result){ 
 	    Debug.dump(result, 'friendsResult from non-batch execution '); 
-	    api.users.getInfo({ api_key:api_key, call_id:getTime(), uids:result}); 
+	    api.users.getInfo({ api_key:api_key, call_id:getTime(), uids:result, fields: "last_name"}); 
 	  }); 
       }); 
   }); 
