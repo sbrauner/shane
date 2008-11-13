@@ -1,3 +1,4 @@
+<!-- Text area to display tracing information to the Web page. If you use Firebug or Safari debug console, these tracings will go to the JavaScript console as well. --> <textarea style="width: 1000px; height: 300px;" id="_traceTextBox"> </textarea> 
 <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript">
 </script> 
 <script type="text/javascript"> 
