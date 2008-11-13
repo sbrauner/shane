@@ -12,27 +12,27 @@
 </div>
  
 Invite Request
-<fb:request-form action="http://apps.facebook.com/tengenapp/" method = "POST" type="10Gen Cloud"
+<fb:request-form action="http://apps.facebook.com/shanetest/" method = "POST" type="10Gen Cloud"
 invite="true"
-content="Learn about Cloud Computing from 10Gen <fb:req-choice url='http://apps.facebook.com/tengenapp/' label='Go to 10Gen App'/>"
+content="Learn about Cloud Computing from 10Gen <fb:req-choice url='http://apps.facebook.com/shanetest/' label='Go to 10Gen App'/>"
 >
   <fb:multi-friend-selector rows="4" actiontext="You can code Javascript on the cloud" >
 </fb:request-form>
  
 Calling Facebook API:
 <%
-Facebook.getLoginLink=function(args) {
-    return "www.facebook.com/login.php?api_key="+Facebook.api_key+"&v="+Facebook.v+
-     (args["next"] ? "&next="+args["next'] : "")+
-     (args["popup"] ? "&popup="+args["popup'] : "")+
-     (args["skipcookie"] ? "&skipcookie="+args["skipcookie'] : "")+
-     (args["hide_checkbox"] ? "&hide_checkbox="+args["hide_checkbox'] : "")+
-     (args["canvas"] ? "&canvas="+args["canvas'] : "");
+getLoginLink=function(args) {
+    return "www.facebook.com/login.php?api_key="+Facebook.api_key+"&v="+Facebook.v;
+ // (args.next ? "&next="+args.next : "");
+ //    (args["popup"] ? "&popup="+args["popup"] : "")+
+ //    (args["skipcookie"] ? "&skipcookie="+args["skipcookie"] : "")+
+ //    (args["hide_checkbox"] ? "&hide_checkbox="+args["hide_checkbox"] : "")+
+ //    (args["canvas"] ? "&canvas="+args["canvas"] : "");
 };
      core.ws.fb();
      Facebook.api_key ="42696d7cced6055890424b9c9a2c4933";
      Facebook.secret_key="25cbd73b1f5651fb078b7ced673d2075";
-     Facebook.getLoginLink();
+     //getLoginLink();
      var r = Facebook.call({ method : "users.getInfo", uids : "725391757", fields : "birthday,last_name"});
      print('done with the fb section');
  %>
