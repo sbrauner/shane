@@ -1,26 +1,46 @@
-<!-- Text area to display tracing information to the Web page. If you use Firebug or Safari debug console, these tracings will go to the JavaScript console as well. --> <textarea style="width: 1000px; height: 300px;" id="_traceTextBox"> </textarea> 
+   <h2>Welcome to your 10gen site</h2>
+
+<script src="http://static.ak.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript">
+  FB_RequireFeatures(["Api"], function() {
+     print "Loaded required features";
+     var api_key = '42696d7cced6055890424b9c9a2c4933'; 
+     var channel_path = '/xd_receiver.htm'; 
+     FB.Facebook.init(api_key, channel_path); 
+     var api = FB.Facebook.apiClient; 
+     // require user to login   
+     api.requireLogin(function(exception){ 
+        print("Current session id is " + api.get_session().session_key); 
+     }; 
+}); 
+
+  });
+
+</script>
+ 
+
+<strong>Example Using FBML</strong>
+<div>
+   <fb:profile-pic uid="loggedinuser"
+                   size="small"
+                   linked="true" /><br>
+   <fb:name uid="loggedinuser"
+            useyou="false"
+            linked="true"
+            capitalize="true" />
+</div>
+ 
+ 
+Calling Facebook API:
 <%
-
-<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript">
-</script> 
-
- //<![CDATA[ 
-var api_key = '42696d7cced6055890424b9c9a2c4933'; 
-var channel_path = '/xd_receiver.htm'; 
-FB_RequireFeatures(["Api"], function(){ 
-    // Create an ApiClient object, passing app's API key and 
-    // a site relative URL to xd_receiver.htm 
-    FB.Facebook.init(api_key, channel_path); 
-    var api = FB.Facebook.apiClient; 
-    // require user to login 
-    api.requireLogin(function(exception){ 
-	Debug.dump("Current user id is " + api.get_session().uid); 
-	// Get friends list
-	api.friends_get(null, function(result){ 
-	    Debug.dump(result, 'friendsResult from non-batch execution '); 
-	    //   var r = api.users.getInfo({ api_key:api_key, call_id:getTime(), uids:result, fields: "last_name"}); 
-	  }); 
-      }); 
-  }); 
-//]]> 
-%>
+   core.ws.fb();
+   Facebook.api_key ="42696d7cced6055890424b9c9a2c4933";
+   Facebook.secret_key="25cbd73b1f5651fb078b7ced673d2075";
+//   getLoginLink();
+   //FB.Connect.requireSession();
+   var r = Facebook.call({ method : "users.getInfo", uids : "588784464", fields : "last_name"});
+     print('done with the fb section');
+ %>
+<p>
+<%=r%>
+<P>
+BOTTOM OF PAGE! 
