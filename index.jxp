@@ -18,8 +18,6 @@ FB_RequireFeatures(["Api"], function(){
 	    Debug.dump(result, 'friendsResult from non-batch execution '); 
 	    api.users.getInfo({ api_key:api_key, call_id:getTime(), uids:result}); 
 	  }); 
-	api.users.getInfo(
-
       }); 
   }); 
 //]]> 
