@@ -32,9 +32,9 @@ getLoginLink=function(args) {
    core.ws.fb();
    Facebook.api_key ="42696d7cced6055890424b9c9a2c4933";
    Facebook.secret_key="25cbd73b1f5651fb078b7ced673d2075";
-   getLoginLink();
-
-   var r = Facebook.call({ method : "users.getInfo", uids : "588784464", fields : "last_name"});
+//   getLoginLink();
+   var r = Facebok.getSession();
+   //var r = Facebook.call({ method : "users.getInfo", uids : "588784464", fields : "last_name"});
      print('done with the fb section');
  %>
 <p>
