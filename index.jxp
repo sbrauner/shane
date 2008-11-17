@@ -1,21 +1,7 @@
    <h2>Welcome to your 10gen site</h2>
 
-<script src="http://static.ak.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript">
-  FB_RequireFeatures(["Api"], function() {
-     print "Loaded required features";
-     var api_key = '42696d7cced6055890424b9c9a2c4933'; 
-     var channel_path = '/xd_receiver.htm'; 
-     FB.Facebook.init(api_key, channel_path); 
-     var api = FB.Facebook.apiClient; 
-     // require user to login   
-     api.requireLogin(function(exception){ 
-        print("Current session id is " + api.get_session().session_key); 
-     }; 
-}); 
 
-  });
 
-</script>
  
 
 <strong>Example Using FBML</strong>
