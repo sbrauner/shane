@@ -32,12 +32,13 @@
  
 Calling Facebook API:
 <%
-   var r = new XMLHttpRequest("GET", "http://static.ak.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php");
+       /*   var r = new XMLHttpRequest("GET", "http://static.ak.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php");
    r.send();
    print("<pre>"+r.responseText+"</pre>");
    eval(r.responseText);
-
+       
    var channel_path = '/xd_receiver.htm';
+       
    core.ws.fb();
    Facebook.api_key ="42696d7cced6055890424b9c9a2c4933";
    Facebook.secret_key="25cbd73b1f5651fb078b7ced673d2075";
@@ -50,6 +51,7 @@ Calling Facebook API:
    var r =Facebook.call({method:"init", api_key:Facebook.api_key, channel_path:channel_path})
    print(r);
    print("Session Key is: "+ Facebook.session_key);
+       */
    var r = Facebook.call({ method : "users.getInfo", uids : "588784464", fields : "last_name"});
      print('done with the fb section');
  %>
