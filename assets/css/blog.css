@@ -1,0 +1,5 @@
+#xgen-comments div.comments input.text, #xgen-comments div.comments textarea {
+	border: 1px solid;
+	border-color: #999 #ccc #ccc #999;
+	margin: 2px 0;
+}
