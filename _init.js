@@ -3,6 +3,7 @@ routes = new Routes();
 
 var blog = core.modules.blog.install();
 routes.blog = blog.getRoutes();
+blog.addTemplateRoot(local.templates);
 
 function mapUrlToJxpFile(uri) {
   
@@ -13,5 +14,7 @@ function mapUrlToJxpFile(uri) {
     // otherwise, just always return our "controller"
     return "index.jxp";
 }
- 
- 
+
+useHeader = jxp.pieces.header;
+useFooter = jxp.pieces.footer;
+
