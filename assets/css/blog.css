@@ -1,3 +1,92 @@
+body {
+	background-color: #4d4d4d;
+}
+
+h1 {
+	font-size: 131%;
+}
+
+h2 {
+	font-size: 123.1%;
+}
+
+h3 {
+	font-size: 116%;
+}
+
+h4 {
+	font-size: 108%;
+}
+
+a, a:visited {
+	color: #2c65af;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+div#header {
+	margin: 0 auto;
+	padding: 20px; 
+	width: 930px;
+	background: url(/assets/images/gradient_top.png) repeat-x center center;
+	border-bottom: 1px solid #4d4d4d;
+}
+
+div#header h1 {
+	font-size: 153.9%;
+}
+
+div#header h1, div#header p {
+	margin: 0; 
+	padding: 0;
+	color: #fff;
+}
+
+div#header h1, div#header p {
+	margin: 0; 
+	padding: 0;
+	color: #fff;
+}
+
+div#body {
+	margin: 0 auto;
+	width: 970px;
+	background-color: #fff;
+	background: #fff url(/assets/images/background_right.gif) repeat-y right;
+}
+
+#xgen-blog-main {
+	clear: left;
+}
+
+#xgen-blog-left {
+	padding-left: 10px;
+	padding-bottom: 100px;
+	width: 630px;
+}
+
+#xgen-blog-right {
+	margin-right: 10px;
+	margin-bottom: 100px;
+	width: 260px;
+}
+
+#xgen-blog-footer {
+	margin: 0 auto;
+	padding: 0;
+	width: 970px;
+	background-color: #fff;
+}
+
+#xgen-blog-footer p {
+	padding: 20px;
+	background-color: #f5f5f5;
+	border-top: 1px solid #ccc;
+	color: #666;
+}
+
 #xgen-comments div.comments input.text, #xgen-comments div.comments textarea {
 	border: 1px solid;
 	border-color: #999 #ccc #ccc #999;

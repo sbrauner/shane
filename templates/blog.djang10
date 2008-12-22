@@ -20,6 +20,13 @@
 {{ htmlheader("Shane's Blog") }}
 {% endblock %}
 
+<div id="header">
+  <h1>Shane Brauner</h1>
+  <p>Thoughts on cloud computing, open source technologies, and building a community around 10gen.</p>
+</div>
+
+<div id="body">
+
 <div id="xgen-blog-main">
 
 <div id="xgen-blog-right">
@@ -61,8 +68,10 @@
 
 </div>
 
-<div id="xgen-blog-footer">
+<div id="xgen-blog-footer" >
   <p>Powered by 10gen.</p>
+</div>
+
 </div>
 
 {% block pagefooter %}
